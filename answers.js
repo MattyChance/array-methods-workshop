@@ -26,8 +26,22 @@ function getPositives(arr) {
 var myArr = [23, 5, -3, -8, 0, 1];
 
 function keepPositive (arr) {
-    var filteredArr = arr.filter(function(num) {return num > 0});
-    return filteredArr.forEach(function(num) {console.log(num)});
+    var filteredArr = arr.filter(function(num) {return num > 0;});
+    return filteredArr.forEach(function(num) {console.log(num);});
 }
-var output = keepPositive(myArr);
-console.log(output);
+// var output = keepPositive(myArr);
+// console.log(output);
+
+//Exercise 3: AHAHAHAHA It's really only one line! :D
+function filterArray (func, arr) {
+    return arr.filter(func);
+}
+
+// var myArr = [23, 5, -3, -8, 0, 1];
+
+// function func (num) {
+//   return num > 0;
+// }
+
+// var output = filterArray(func, myArr);
+// console.log(output);
