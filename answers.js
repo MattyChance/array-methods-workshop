@@ -45,3 +45,20 @@ function filterArray (func, arr) {
 
 // var output = filterArray(func, myArr);
 // console.log(output);
+
+//Exercise 4: return the longest word in a string using reduce
+function getLongest(str) {
+    var strToArr = str.split(" "); 
+    return strToArr.reduce(function(str1, str2){
+        // console.log('prev, next', str1, str2);
+        if (str1.length > str2.length) {
+          return str1;
+        } else {
+          return str2;
+        }
+    },"");
+}
+
+// var myStr = 'watermelon is my favourite fruits dude';
+// var output = getLongest(myStr);
+// console.log(output);
