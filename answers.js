@@ -62,3 +62,23 @@ function getLongest(str) {
 // var myStr = 'watermelon is my favourite fruits dude';
 // var output = getLongest(myStr);
 // console.log(output);
+
+//Exercise 5: using reduce to return the number of vowels in a string
+function countVowels(str) {
+    var strToArr = str.split('');
+    // console.log(strToArr);
+    var arrOfVowels = ['a', 'e', 'i', 'o', 'u'];
+    var keepVowels = strToArr.reduce(function(count, letter) {
+        if (arrOfVowels.indexOf(letter) > -1) {
+            return count += 1;
+        } else {
+            return count += 0;
+        }
+    }, 0);
+    return keepVowels;
+}
+
+// var myStr = 'The quick brown fox';
+// var output = countVowels(myStr);
+// console.log(output);
+
