@@ -82,3 +82,25 @@ function countVowels(str) {
 // var output = countVowels(myStr);
 // console.log(output);
 
+//Exercise 6: object of two properties: high and low
+function highLow (arr) {
+    // var initialValue = {
+    //     highest: -Infinity,
+    //     lowest: +Infinity
+    // };
+    // console.log(initialValue);
+    var result = arr.reduce(function (finalObj, newValue) {
+        if (newValue > finalObj.highest) {
+            finalObj.highest = newValue;
+        } else if (newValue < finalObj.lowest) {
+            finalObj.lowest = newValue;
+        }
+        return finalObj;
+    }, {highest: -Infinity, lowest: +Infinity});
+    //why does not work if i put in initialValue.highest
+    return result;
+}
+
+var arrNums = [3, 4, 9, 1, -8, 23];
+var output = highLow(arrNums);
+console.log(output);
