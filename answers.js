@@ -133,8 +133,63 @@ function countChars(str) {
 }
 var myStr = 'hello world';
 var output = countChars(myStr);
-console.log(output);
+// console.log(output);
+
+//Exercise 9:peopleById: take an array of people
+//return an object where each person is keyed by their unique ID.
+//using a for loop
+/*
+var newObj = {};
+var prop = [];
+
+for (var i = 0; i < arr.length; i++) {
+  prop.push(arr[i].id);
+  if(!newObj[prop[i]]) {
+    newObj[prop[i]] = arr[i];
+  }
+}
+
+console.log(newObj);
+*/
+//using reduce
+var arrPplContact = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+];
+
+function peopleById (arr) {
+    
+    var finalOutput = arr.reduce(function(finalObj, prop) {
+        /*what i need to do is to use reduce function on an array
+        and eventually get an object that has each array value's (an object)
+        property"id"'s value and then assign each array's element to that value
+        */
+        /*reduce function works on each element in the array; in this case,
+        what will be the parameters 
+        //make an object with only arrays' elements' id
+        */
+        
+        
+        
+    }, {});
+    console.log(finalOutput);
+}
 
 
-
-
+peopleById(arrPplContact);
