@@ -134,10 +134,8 @@ function countChars(str) {
 var myStr = 'hello world';
 var output = countChars(myStr);
 // console.log(output);
-<<<<<<< HEAD
-=======
+
 //if we dunno the property of an object, we need to use dynamic [] quotation
->>>>>>> master
 
 //Exercise 9:peopleById: take an array of people
 //return an object where each person is keyed by their unique ID.
@@ -179,12 +177,8 @@ var arrPplContact = [
 
 function peopleById (arr) {
     
-    var finalOutput = arr.reduce(function(finalObj, prop) {
+    var finalOutput = arr.reduce(function(prev, curr, idx) {
         /*what i need to do is to use reduce function on an array
-=======
-    var finalOutput = arr.reduce(function(prev, currEle, idx, arr) {
-        /*what i need to do is to use reduce function on the array
->>>>>>> master
         and eventually get an object that has each array value's (an object)
         property"id"'s value and then assign each array's element to that value
         */
@@ -199,6 +193,28 @@ function peopleById (arr) {
     }, {})
     return finalOutput;
 }
+// console.log(peopleById(arrPplContact));
 
+//Exercise 10: Expansion on exercise 9 
+function peopleByFirstName(arr) {
+    //we want to produce same object but organized by firstname
+    var contactBook = arr.reduce(function(prev, curr, idx){
+        //object is composed of keys of firstName
+        //key.value is an array filled with an object
+        var objKey = curr['firstName'];
+        if (!prev[objKey]) {
+            prev[arr[idx]['firstName']] = [];
+            prev[arr[idx]['firstName']].push(curr);
+        }
+        else {
+            (prev[arr[idx]['firstName']]).push(curr);
+        }
+        
+        return prev;
 
-peopleById(arrPplContact);
+    }, {})
+    return contactBook;
+}
+
+var output = peopleByFirstName(arrPplContact);
+console.log(output);
