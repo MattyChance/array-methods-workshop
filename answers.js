@@ -134,6 +134,10 @@ function countChars(str) {
 var myStr = 'hello world';
 var output = countChars(myStr);
 // console.log(output);
+<<<<<<< HEAD
+=======
+//if we dunno the property of an object, we need to use dynamic [] quotation
+>>>>>>> master
 
 //Exercise 9:peopleById: take an array of people
 //return an object where each person is keyed by their unique ID.
@@ -177,6 +181,10 @@ function peopleById (arr) {
     
     var finalOutput = arr.reduce(function(finalObj, prop) {
         /*what i need to do is to use reduce function on an array
+=======
+    var finalOutput = arr.reduce(function(prev, currEle, idx, arr) {
+        /*what i need to do is to use reduce function on the array
+>>>>>>> master
         and eventually get an object that has each array value's (an object)
         property"id"'s value and then assign each array's element to that value
         */
@@ -184,11 +192,12 @@ function peopleById (arr) {
         what will be the parameters 
         //make an object with only arrays' elements' id
         */
+        prev[arr[idx]['id']]= arr[idx]; 
+        //wowowowow one line!! after knowing the dynamic nature of []notation!
         
-        
-        
-    }, {});
-    console.log(finalOutput);
+        return prev;
+    }, {})
+    return finalOutput;
 }
 
 
