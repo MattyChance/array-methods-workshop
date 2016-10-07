@@ -101,6 +101,40 @@ function highLow (arr) {
     return result;
 }
 
+// var arrNums = [3, 4, 9, 1, -8, 23];
+// var output = highLow(arrNums);
+// console.log(output);
+
+//Exercise 7: return the higest, second highest, lowest, and second lowest numbers
+/*
+function highLowTwo(arr) {
+    return arr.reduce(function() {
+        
+    });
+}
 var arrNums = [3, 4, 9, 1, -8, 23];
-var output = highLow(arrNums);
+var output = highLowTwo(arrNums);
 console.log(output);
+*/
+
+//Exercise 8: countChars
+function countChars(str) {
+    str = str.replace(/\s/g, '');
+    var myArr = str.split("");
+    return myArr.reduce(function(finalObj, letter) {
+        if (!finalObj[letter]) {
+            finalObj[letter] = 1;
+        }
+        else {
+            finalObj[letter] += 1;
+        }
+        return finalObj;
+    }, {});
+}
+var myStr = 'hello world';
+var output = countChars(myStr);
+console.log(output);
+
+
+
+
