@@ -192,7 +192,7 @@ function peopleById (arr) {
         return prev;
         
         
-    }, {});
+    }, {})
     console.log(finalOutput);
 }
 
